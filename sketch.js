@@ -1,6 +1,6 @@
 let beef, croutons, cucumber, cranberry, ham, lettuce, pasta, pepper, pineapple, quinoa, tomato;
-let beefImg;
-let shape1;
+let beefImg, croutonsImg;
+let beefIcon, croutonsIcon;
 
 function preload() {
   beef = loadSound('sounds/beef.edit.wav');
@@ -15,27 +15,41 @@ function preload() {
   quinoa = loadSound('sounds/quinoa.edit.wav');
   tomato = loadSound('sounds/tomato.edit.wav');
 
-  beefImg = loadImage('images/deli-beef.jpg');
+  beefImg = loadImage('images/deli-beef.png');
+  croutonsImg = loadImage('images/croutons.png');
 }
 
 function setup() {
   createCanvas(600, 600);
 
-  shape1 = new Draggable(100, 100, 100, 100);
+  beefIcon = new Draggable(100, 100, 100, 100);
+  croutonsIcon = new Draggable(200, 200, 100, 100);
 }
 
 function draw() {
   background(160, 136, 111);
-  shape1.over();
-  shape1.update();
-  image(beefImg, shape1.x, shape1.y, shape1.w, shape1.h);
-  shape1.show();
+
+  beefIcon.over();
+  beefIcon.update();
+  let beefImgX = constrain(beefIcon.x, 0, 600 - beefIcon.w);
+  let beefImgY = constrain(beefIcon.y, 0, 600 - beefIcon.h);
+  image(beefImg, beefImgX, beefImgY, beefIcon.w, beefIcon.h);
+  beefIcon.show();
+
+  croutonsIcon.over();
+  croutonsIcon.update();
+  let croutonsImgX = constrain(croutonsIcon.x, 0, 600 - croutonsIcon.w);
+  let croutonsImgY = constrain(croutonsIcon.y, 0, 600 - croutonsIcon.h);
+  image(croutonsImg, croutonsImgX, croutonsImgY, croutonsIcon.w, croutonsIcon.h);
+  croutonsIcon.show();
 }
 
 function mousePressed() {
-  shape1.pressed();
+  beefIcon.pressed();
+  croutonsIcon.pressed();
 }
 
 function mouseReleased() {
-  shape1.released();
+  beefIcon.released();
+  croutonsIcon.released();
 }

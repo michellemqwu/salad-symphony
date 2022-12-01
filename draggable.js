@@ -1,5 +1,6 @@
-// Click and Drag an object
+// Adapted code from: Click and Drag an object 
 // Daniel Shiffman <http://www.shiffman.net>
+// for the purpose of this game
 
 class Draggable {
     constructor(x, y, w, h) {
