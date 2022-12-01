@@ -34,11 +34,15 @@ class Draggable {
         noStroke();
         // Different fill based on state
         if (this.dragging) {
-            fill(50);
+            stroke(0);
+            strokeWeight(1);
+            fill(50, 100);
         } else if (this.rollover) {
-            fill(100);
+            stroke(0);
+            strokeWeight(2);
+            noFill();
         } else {
-            fill(175, 200);
+            noFill();
         }
         this.x = constrain(this.x, 0, 600 - this.w);
         this.y = constrain(this.y, 0, 600 - this.h);
