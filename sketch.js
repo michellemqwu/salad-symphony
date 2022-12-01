@@ -28,8 +28,8 @@ function draw() {
   background(160, 136, 111);
   shape1.over();
   shape1.update();
-  shape1.show();
   image(beefImg, shape1.x, shape1.y, shape1.w, shape1.h);
+  shape1.show();
 }
 
 function mousePressed() {

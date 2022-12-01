@@ -31,7 +31,7 @@ class Draggable {
     }
 
     show() {
-        stroke(0);
+        noStroke();
         // Different fill based on state
         if (this.dragging) {
             fill(50);
