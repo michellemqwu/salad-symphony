@@ -34,22 +34,22 @@ function preload() {
 function setup() {
   createCanvas(windowWidth, windowHeight);
 
-  beefIcon = new Draggable(100, 100, 200, 200, windowWidth, windowHeight);
-  croutonsIcon = new Draggable(100, 200, 200, 200, windowWidth, windowHeight);
-  cucumberIcon = new Draggable(100, 300, 200, 200, windowWidth, windowHeight);
-  cranberryIcon = new Draggable(100, 400, 200, 200, windowWidth, windowHeight);
-  lettuceIcon = new Draggable(100, 500, 200, 200, windowWidth, windowHeight);
-  pastaIcon = new Draggable(300, 100, 200, 200, windowWidth, windowHeight);
-  pepperIcon = new Draggable(300, 200, 200, 200, windowWidth, windowHeight);
-  pineappleIcon = new Draggable(300, 300, 200, 200, windowWidth, windowHeight);
-  quinoaIcon = new Draggable(300, 400, 200, 200, windowWidth, windowHeight);
-  tomatoIcon = new Draggable(300, 500, 200, 200, windowWidth, windowHeight);
+  beefIcon = new Draggable(windowWidth/6, windowHeight/7, 200, 200, windowWidth, windowHeight);
+  croutonsIcon = new Draggable(windowWidth/3.3, windowHeight/13, 200, 200, windowWidth, windowHeight);
+  cucumberIcon = new Draggable(windowWidth/2.3, windowHeight/40, 200, 200, windowWidth, windowHeight);
+  cranberryIcon = new Draggable(windowWidth/1.8, windowHeight/13, 200, 200, windowWidth, windowHeight);
+  lettuceIcon = new Draggable(windowWidth/1.5, windowHeight/8, 200, 200, windowWidth, windowHeight);
+  pastaIcon = new Draggable(windowWidth/5, windowHeight/3, 200, 200, windowWidth, windowHeight);
+  pepperIcon = new Draggable(windowWidth/3.3, windowHeight/3.8, 200, 200, windowWidth, windowHeight);
+  pineappleIcon = new Draggable(windowWidth/2.3, windowHeight/5, 200, 200, windowWidth, windowHeight);
+  quinoaIcon = new Draggable(windowWidth/1.85, windowHeight/4, 200, 200, windowWidth, windowHeight);
+  tomatoIcon = new Draggable(windowWidth/1.55, windowHeight/2.8, 200, 200, windowWidth, windowHeight);
 }
 
 function draw() {
   background(160, 136, 111);
 
-  image(bowl_front, windowWidth/3, windowHeight/11, 700, 900);
+  image(bowl_front, windowWidth/3.4, windowHeight/5, 700, 900);
 
   beefIcon.over();
   beefIcon.update();
@@ -211,7 +211,7 @@ function draw() {
     quinoa.stop();
   }
 
-  if (isInsideBowl(tomatoImgX, tomatoaImgY)) {
+  if (isInsideBowl(tomatoImgX, tomatoImgY)) {
     if (!tomatoPlaying) {
       tomatoPlaying = true;
       tomato.loop();
@@ -221,11 +221,11 @@ function draw() {
     tomato.stop();
   }
 
-  image(bowl_back, windowWidth/3, windowHeight/11, 700, 900);
+  image(bowl_back, windowWidth/3.4, windowHeight/5, 700, 900);
 }
 
 function isInsideBowl(x, y) {
-  if (x >= windowWidth/3 && x <= (windowWidth/3 + 500) && y >= (windowHeight/11 + 250) && y <= (windowHeight/11 + 600)) {
+  if (x >= windowWidth/3.4 && x <= (windowWidth/3.4 + 500) && y >= (windowHeight/11 + 250) && y <= (windowHeight/11 + 600)) {
     return true;
   }
   return false;
