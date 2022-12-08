@@ -3,13 +3,15 @@
 // for the purpose of this game
 
 class Draggable {
-    constructor(x, y, w, h) {
+    constructor(x, y, w, h, canvasWidth, canvasHeight) {
         this.dragging = false; // Is the object being dragged?
         this.rollover = false; // Is the mouse over the ellipse?
         this.x = x;
         this.y = y;
         this.w = w;
         this.h = h;
+        this.canvasWidth = canvasWidth;
+        this.canvasHeight = canvasHeight;
         this.offsetX = 0;
         this.offsetY = 0;
     }
@@ -45,8 +47,8 @@ class Draggable {
         } else {
             noFill();
         }
-        this.x = constrain(this.x, 0, 600 - this.w);
-        this.y = constrain(this.y, 0, 600 - this.h);
+        this.x = constrain(this.x, 0, this.canvasWidth - this.w);
+        this.y = constrain(this.y, 0, this.canvasHeight - this.h);
         rect(this.x, this.y, this.w, this.h);
     }
 
