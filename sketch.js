@@ -1,8 +1,8 @@
 let beef, croutons, cucumber, cranberry, lettuce, pasta, pepper, pineapple, quinoa, tomato;
 let beefImg, croutonsImg, cucumberImg, cranberryImg, lettuceImg, pastaImg, pepperImg, pineappleImg, quinoaImg, tomatoImg;
 let beefIcon, croutonsIcon, cucumberIcon, cranberryIcon, pastaIcon, pepperIcon, pineappleIcon, quinoaIcon, tomatoIcon;
-let beefPlaying, croutonsPlaying = false;
-let bowl;
+let beefPlaying, croutonsPlaying, cucumberPlaying, cranberryPlaying, lettucePlaying, pastaPlaying, pepperPlaying, pineapplePlaying, quinoaPlaying, tomatoPlaying = false;
+let bowl_front, bowl_back;
 
 function preload() {
   beef = loadSound('sounds/beef.edit.wav');
@@ -16,8 +16,6 @@ function preload() {
   quinoa = loadSound('sounds/quinoa.edit.wav');
   tomato = loadSound('sounds/tomato.edit.wav');
 
-  bowl = loadImage('images/Bowl.png');
-
   beefImg = loadImage('images/Beef.png');
   croutonsImg = loadImage('images/Crouton.png');
   cucumberImg = loadImage('images/Cucumber.png');
@@ -28,6 +26,9 @@ function preload() {
   pineappleImg = loadImage('images/Pineapple.png');
   quinoaImg = loadImage('images/Quinoa.png');
   tomatoImg = loadImage('images/Tomato.png');
+
+  bowl_front = loadImage('images/bowl_back.png');
+  bowl_back = loadImage('images/bowl_front.png');
 }
 
 function setup() {
@@ -47,6 +48,8 @@ function setup() {
 
 function draw() {
   background(160, 136, 111);
+
+  image(bowl_front, windowWidth/3, windowHeight/11, 700, 900);
 
   beefIcon.over();
   beefIcon.update();
@@ -138,12 +141,91 @@ function draw() {
     croutons.stop();
   }
 
-  image(bowl, windowWidth/3, windowHeight/4, 600, 800);
+  if (isInsideBowl(cucumberImgX, cucumberImgY)) {
+    if (!cucumberPlaying) {
+      cucumberPlaying = true;
+      cucumber.loop();
+    }
+  } else {
+    cucumberPlaying = false;   
+    cucumber.stop();
+  }
 
+  if (isInsideBowl(cranberryImgX, cranberryImgY)) {
+    if (!cranberryPlaying) {
+      cranberryPlaying = true;
+      cranberry.loop();
+    }
+  } else {
+    cranberryPlaying = false;   
+    cranberry.stop();
+  }
+
+  if (isInsideBowl(lettuceImgX, lettuceImgY)) {
+    if (!lettucePlaying) {
+      lettucePlaying = true;
+      lettuce.loop();
+    }
+  } else {
+    lettucePlaying = false;   
+    lettuce.stop();
+  }
+
+  if (isInsideBowl(pastaImgX, pastaImgY)) {
+    if (!pastaPlaying) {
+      pastaPlaying = true;
+      pasta.loop();
+    }
+  } else {
+    pastaPlaying = false;   
+    pasta.stop();
+  }
+
+  if (isInsideBowl(pepperImgX, pepperImgY)) {
+    if (!pepperPlaying) {
+      pepperPlaying = true;
+      pepper.loop();
+    }
+  } else {
+    pepperPlaying = false;   
+    pepper.stop();
+  }
+
+  if (isInsideBowl(pineappleImgX, pineappleImgY)) {
+    if (!pineapplePlaying) {
+      pineapplePlaying = true;
+      pineapple.loop();
+    }
+  } else {
+    pineapplePlaying = false;   
+    pineapple.stop();
+  }
+
+  if (isInsideBowl(quinoaImgX, quinoaImgY)) {
+    if (!quinoaPlaying) {
+      quinoaPlaying = true;
+      quinoa.loop();
+    }
+  } else {
+    quinoaPlaying = false;   
+    quinoa.stop();
+  }
+
+  if (isInsideBowl(tomatoImgX, tomatoaImgY)) {
+    if (!tomatoPlaying) {
+      tomatoPlaying = true;
+      tomato.loop();
+    }
+  } else {
+    tomatoPlaying = false;
+    tomato.stop();
+  }
+
+  image(bowl_back, windowWidth/3, windowHeight/11, 700, 900);
 }
 
 function isInsideBowl(x, y) {
-  if (x >= 200 && x <= 400 && y >= 200 && y <= 400) {
+  if (x >= windowWidth/3 && x <= (windowWidth/3 + 500) && y >= (windowHeight/11 + 250) && y <= (windowHeight/11 + 600)) {
     return true;
   }
   return false;
