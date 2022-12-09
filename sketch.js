@@ -47,7 +47,7 @@ function setup() {
 }
 
 function draw() {
-  background(160, 136, 111);
+  background(147, 186, 159);
 
   image(bowl_front, windowWidth/3.4, windowHeight/5, 700, 900);
 
