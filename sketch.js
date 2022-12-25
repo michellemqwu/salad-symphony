@@ -231,6 +231,21 @@ function isInsideBowl(x, y) {
   return false;
 }
 
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
+  // when window is resized, set new constraints for the draggable icons for them to not go out of frame
+  beefIcon = new Draggable(windowWidth/6, windowHeight/7, 200, 200, windowWidth, windowHeight);
+  croutonsIcon = new Draggable(windowWidth/3.3, windowHeight/13, 200, 200, windowWidth, windowHeight);
+  cucumberIcon = new Draggable(windowWidth/2.3, windowHeight/40, 200, 200, windowWidth, windowHeight);
+  cranberryIcon = new Draggable(windowWidth/1.8, windowHeight/13, 200, 200, windowWidth, windowHeight);
+  lettuceIcon = new Draggable(windowWidth/1.5, windowHeight/8, 200, 200, windowWidth, windowHeight);
+  pastaIcon = new Draggable(windowWidth/5, windowHeight/3, 200, 200, windowWidth, windowHeight);
+  pepperIcon = new Draggable(windowWidth/3.3, windowHeight/3.8, 200, 200, windowWidth, windowHeight);
+  pineappleIcon = new Draggable(windowWidth/2.3, windowHeight/5, 200, 200, windowWidth, windowHeight);
+  quinoaIcon = new Draggable(windowWidth/1.85, windowHeight/4, 200, 200, windowWidth, windowHeight);
+  tomatoIcon = new Draggable(windowWidth/1.55, windowHeight/2.8, 200, 200, windowWidth, windowHeight);
+}
+
 function mousePressed() {
   beefIcon.pressed();
   croutonsIcon.pressed();
