@@ -225,7 +225,7 @@ function draw() {
 }
 
 function isInsideBowl(x, y) {
-  if (x >= windowWidth/3.4 && x <= (windowWidth/3.4 + 500) && y >= (windowHeight/11 + 250) && y <= (windowHeight/11 + 600)) {
+  if (x >= windowWidth/3.4 && x <= (windowWidth/3.4 + 500) && y >= (windowHeight/11 + 250) && y <= (windowHeight/11 + 650)) {
     return true;
   }
   return false;
